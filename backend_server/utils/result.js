@@ -6,7 +6,7 @@ function createResult(err, data){
         result.data = data
     }
     else{
-        result.Status = 'Not Found'
+        result.status = 'Not Found'
         result.err = err
     }
     return result

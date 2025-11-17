@@ -9,15 +9,10 @@ import Login from './pages/signin';
 import Register from './pages/signup';
 import AllBlogs from "./pages/AllBlogs";
 import Home from "./pages/Home1" 
+import EditBlog from "./pages/EditBlog";
 
 export const UserContext = createContext(null); 
 
-// const ProtectedRoute = ({ users, children }) => {
-//   if (!users) {
-//     return <Navigate to="/" replace />;
-//   }
-//   return children ? children : <Outlet />; 
-// };
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null); 
@@ -29,6 +24,7 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/register' element={<Register />} />
              <Route path="/home" element={currentUser ? <Home /> : <Navigate to='/'/>}>
+              <Route path="edit-blog/:blog_id" element={<EditBlog />} />
               <Route index element={<AllBlogs />} />
               <Route path="all-blogs" element={<AllBlogs />} /> 
               <Route path="add-blog" element={<AddBlog />} /> 
