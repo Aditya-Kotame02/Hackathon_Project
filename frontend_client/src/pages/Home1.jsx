@@ -5,7 +5,6 @@ function Home1() {
   return (
     <div>
       <NavBar/>
-      <h1>Home</h1>
       <Outlet /> 
     </div>
   )

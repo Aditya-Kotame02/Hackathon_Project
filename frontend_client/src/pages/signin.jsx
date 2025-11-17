@@ -18,9 +18,8 @@ function signin() {
         try{
         const result = await loginUser(email, password)
         console.log(result)
-        
         console.log(result.status)
-        if(result.Status == "success"){
+        if(result.status == "success"){
             window.sessionStorage.setItem('token', result.data.token)
             setUser({
                 name: result.data.full_name,
